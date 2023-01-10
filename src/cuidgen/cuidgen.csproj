@@ -9,6 +9,12 @@
         <RootNamespace>Xaevik.Cuid.Generator</RootNamespace>
     </PropertyGroup>
     
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>cuidgen</ToolCommandName>
+    </PropertyGroup>
+    
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <DebuggerSupport>false</DebuggerSupport>
         <EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>

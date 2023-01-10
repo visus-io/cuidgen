@@ -44,16 +44,43 @@ jobs:
         run: dotnet restore --verbosity Quiet
       - name: Build
         run: |
-          dotnet build -c release --no-restore \
+          dotnet publish -c release --self-contained -r linux-arm64 \
             -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
             -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
             -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
-          dotnet publish -c release --no-restore --no-build --self-contained -r linux-arm64
-          dotnet publish -c release --no-restore --no-build --self-contained -r linux-musl-arm64
-          dotnet publish -c release --no-restore --no-build --self-contained -r linux-musl-x64
-          dotnet publish -c release --no-restore --no-build --self-contained -r linux-x64
-          dotnet publish -c release --no-restore --no-build --self-contained -r osx-arm64
-          dotnet publish -c release --no-restore --no-build --self-contained -r osx-x64
-          dotnet publish -c release --no-restore --no-build --self-contained -r win-arm64
-          dotnet publish -c release --no-restore --no-build --self-contained -r win-x64
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r linux-musl-arm64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r linux-musl-x64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r linux-x64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r osx-arm64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r osx-x64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r win-arm64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
+          
+          dotnet publish -c release --no-restore --no-build --self-contained -r win-x64 \
+            -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
+            -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
+            -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }}
           

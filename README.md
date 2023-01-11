@@ -21,7 +21,7 @@ A command-line utility based on [cuid.net](https://github.com/xaevik/cuid.net/) 
 dotnet tool install --global cuidgen.tool
 ```
 
-If you prefer, cuidgen is also available as a portable binary for Windows, Mac and Linux for download from the [Releases]([Releases · xaevik/cuidgen (github.com)](https://github.com/xaevik/cuidgen/releases)) page.
+If you prefer, cuidgen is also available as a portable binary for Windows, Mac and Linux for download from the [Releases](https://github.com/xaevik/cuidgen/releases) page.
 
 ### Example Usage
 

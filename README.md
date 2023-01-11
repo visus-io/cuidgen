@@ -5,7 +5,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/xaevik/cuidgen)
 ![GitHub release (latest by SemVer)](https://img.shields.io/github/downloads/xaevik/cuidgen/latest/total)
 
-[![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool/) 
+[![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool)
 ![Nuget](https://img.shields.io/nuget/dt/cuidgen.tool)
 
 
@@ -38,7 +38,7 @@ fd59iobs0p
 ### Command Arguments
 
 | Argument       | Description                                               | Default Value | Accepted Values |
-|----------------| --------------------------------------------------------- | ------------- | --------------- |
-| -l:\<length\>  | Desired length of the CUID value (only applies to CUIDv2) | 24            | 4-24            |
+|----------------| --------------------------------------------------------- | ------------- |-----------------|
+| -l:\<length\>  | Desired length of the CUID value (only applies to CUIDv2) | 24            | 4-32            |
 | -v:\<version\> | Version of the CUID to generate                           | 2             | 1 or 2          |
 

@@ -38,7 +38,7 @@ fd59iobs0p
 ### Command Arguments
 
 | Argument       | Description                                               | Default Value | Accepted Values |
-|----------------| --------------------------------------------------------- | ------------- |-----------------|
+|----------------|-----------------------------------------------------------| ------------- |-----------------|
 | -l:\<length\>  | Desired length of the CUID value (only applies to CUIDv2) | 24            | 4-32            |
-| -v:\<version\> | Version of the CUID to generate                           | 2             | 1 or 2          |
+| -g:\<version\> | Generation of the CUID to generate                        | 2             | 1 or 2          |
 

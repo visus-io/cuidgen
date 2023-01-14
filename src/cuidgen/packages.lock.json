@@ -4,9 +4,9 @@
     "net6.0": {
       "cuid.net": {
         "type": "Direct",
-        "requested": "[2.0.0, )",
-        "resolved": "2.0.0",
-        "contentHash": "KAMK9qBRGnSe5HXckah94xlnMfqRgst5Rndvm40wUyIt0aoJ9t8wqv/VxysCuXXSnzq+FWRr1NMme6nQUgtoiQ==",
+        "requested": "[2.0.1, )",
+        "resolved": "2.0.1",
+        "contentHash": "GSzFHT9JjVfVjospTtu2RsfCFeTt8gIbw+0z+r39EP/ojifrhq3MQhOgcW3enquTr0vYdxPM8TQPMY0AZttv5Q==",
         "dependencies": {
           "BouncyCastle.Cryptography": "2.0.0"
         }

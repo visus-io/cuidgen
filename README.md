@@ -2,9 +2,6 @@
 
 ![GitHub](https://img.shields.io/github/license/xaevik/cuidgen?logo=github&style=flat) [![Continuous Integration](https://github.com/xaevik/cuidgen/actions/workflows/ci.yaml/badge.svg)](https://github.com/xaevik/cuidgen/actions/workflows/ci.yaml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=alert_status)](https://sonarcloud.io/summary/overall?id=cuidgen) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=security_rating)](https://sonarcloud.io/summary/overall?id=cuidgen)
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/xaevik/cuidgen)
-![GitHub release (latest by SemVer)](https://img.shields.io/github/downloads/xaevik/cuidgen/latest/total)
-
 [![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool)
 ![Nuget](https://img.shields.io/nuget/dt/cuidgen.tool)
 

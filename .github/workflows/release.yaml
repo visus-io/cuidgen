@@ -118,7 +118,7 @@ jobs:
             -p:Version=${{ steps.gitversion.outputs.assemblySemVer }} \
             -p:FileVersion=${{ steps.gitversion.outputs.assemblySemFileVer }} \
             -p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }} \
-            -p:PackageOutputPath=${{ runner.temp }}/artifacts/${{ matrix.rid }}
+            -p:PublishDir=${{ runner.temp }}/artifacts/${{ matrix.rid }}
           7z a cuidgen-${{ steps.gitversion.outputs.semVer}}-${{ matrix.rid }}.7z ${{ runner.temp }}/artifacts/${{ matrix.rid }}/*
       - name: Publish
         uses: ncipollo/release-action@v1

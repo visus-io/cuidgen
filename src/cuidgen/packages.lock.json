@@ -4,11 +4,11 @@
     "net6.0": {
       "cuid.net": {
         "type": "Direct",
-        "requested": "[2.2.0, )",
-        "resolved": "2.2.0",
-        "contentHash": "dRwWkntJ0l5HCY2XtTmweJhDjBZ+YwtMqRXHnd3rdT+bw1YdYgKW9QV4orzsm1acyTv/kmScn6Y5wyTALQEKjg==",
+        "requested": "[2.3.0, )",
+        "resolved": "2.3.0",
+        "contentHash": "Rr9HhazpDAXrWdyOFl/1jkQ26PMi64rsGehACCvAnIFcOghvr3FbI2HiCWfLGiCwWM85f8JHZCnWkgB/H82XQg==",
         "dependencies": {
-          "BouncyCastle.Cryptography": "2.0.0"
+          "BouncyCastle.Cryptography": "2.1.1"
         }
       },
       "McMaster.Extensions.CommandLineUtils": {
@@ -38,8 +38,8 @@
       },
       "BouncyCastle.Cryptography": {
         "type": "Transitive",
-        "resolved": "2.0.0",
-        "contentHash": "pzHd/gZou2SG4tXQQwXt1oEVJ3ZpmHVa5/Hg0k9QMkdc84HEUBb2DI9ajRlw6TS6dTy/UPZXLjpV9Us5L0SeVA=="
+        "resolved": "2.1.1",
+        "contentHash": "NNQaa4eyf5YjSdLKUWGPzq5HXZQc3yGybfIOkR6UY1C/rRFWdo0UhSzBqqnxwGnq3ie4vkN0JlzhhANjfTIJIQ=="
       },
       "Microsoft.Build.Tasks.Git": {
         "type": "Transitive",

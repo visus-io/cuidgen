@@ -5,8 +5,8 @@
 [![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool)
 ![Nuget](https://img.shields.io/nuget/dt/cuidgen.tool)
 
-
-A command-line utility based on [cuid.net](https://github.com/xaevik/cuid.net/) for generating collision-resistant ids. You can read more about CUIDs from the [official project website](https://github.com/paralleldrive/cuid2).
+A command-line utility based on [cuid.net](https://github.com/xaevik/cuid.net/) for generating collision-resistant ids.
+You can read more about CUIDs from the [official project website](https://github.com/paralleldrive/cuid2).
 
 ---
 
@@ -18,7 +18,8 @@ A command-line utility based on [cuid.net](https://github.com/xaevik/cuid.net/) 
 dotnet tool install --global cuidgen.tool
 ```
 
-If you prefer, cuidgen is also available as a portable binary for Windows, Mac and Linux for download from the [Releases](https://github.com/xaevik/cuidgen/releases) page.
+If you prefer, cuidgen is also available as a portable binary for Windows, Mac and Linux for download from
+the [Releases](https://github.com/xaevik/cuidgen/releases) page.
 
 ### Example Usage
 
@@ -35,7 +36,7 @@ fd59iobs0p
 ### Command Arguments
 
 | Argument       | Description                                               | Default Value | Accepted Values |
-|----------------|-----------------------------------------------------------| ------------- |-----------------|
+|----------------|-----------------------------------------------------------|---------------|-----------------|
 | -l:\<length\>  | Desired length of the CUID value (only applies to CUIDv2) | 24            | 4-32            |
 | -g:\<version\> | Generation of the CUID to generate                        | 2             | 1 or 2          |
 

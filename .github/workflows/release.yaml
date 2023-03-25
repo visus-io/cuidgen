@@ -57,9 +57,7 @@ jobs:
     name: Create GitHub Release
     runs-on: ubuntu-latest
     needs: tool
-    permissions:
-      contents: write
-      pull-requests: read
+    permissions: write-all
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:

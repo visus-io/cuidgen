@@ -1,4 +1,4 @@
-﻿namespace Xaevik.Cuid.Generator;
+﻿namespace Visus.Cuid.Generator;
 
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;

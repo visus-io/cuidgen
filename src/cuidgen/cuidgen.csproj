@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RuntimeIdentifiers>linux-arm64;linux-musl-arm64;linux-musl-x64;linux-x64;osx-arm64;osx-x64;win-arm64;win-x64</RuntimeIdentifiers>
-        <RootNamespace>Xaevik.Cuid.Generator</RootNamespace>
+        <RootNamespace>Visus.Cuid.Generator</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
@@ -24,12 +24,12 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/xaevik/cuidgen</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/visus-io/cuidgen</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/xaevik/cuidgen</RepositoryUrl>
+        <RepositoryUrl>https://github.com/visus-io/cuidgen</RepositoryUrl>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
@@ -44,7 +44,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="cuid.net" Version="2.3.0" />
+      <PackageReference Include="cuid.net" Version="3.0.0" />
       <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.2" />
       <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.1">
         <PrivateAssets>all</PrivateAssets>

@@ -55,7 +55,7 @@ jobs:
         run: dotnet restore --verbosity Quiet
       - name: Begin SonarScanner
         run: |
-          dotnet-sonarscanner begin /k:"cuidgen" /o:"xaevik" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
+          dotnet-sonarscanner begin /k:"cuidgen" /o:"visus" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
             /d:sonar.host.url="https://sonarcloud.io" 
       - name: Build
         run: dotnet build -c release --no-restore 

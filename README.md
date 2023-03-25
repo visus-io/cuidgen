@@ -1,11 +1,11 @@
 # cuidgen
 
-![GitHub](https://img.shields.io/github/license/xaevik/cuidgen?logo=github&style=flat) [![Continuous Integration](https://github.com/xaevik/cuidgen/actions/workflows/ci.yaml/badge.svg)](https://github.com/xaevik/cuidgen/actions/workflows/ci.yaml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=alert_status)](https://sonarcloud.io/summary/overall?id=cuidgen) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=security_rating)](https://sonarcloud.io/summary/overall?id=cuidgen)
+![GitHub](https://img.shields.io/github/license/visus-io/cuidgen?logo=github&style=flat) [![Continuous Integration](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml/badge.svg)](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=alert_status)](https://sonarcloud.io/summary/overall?id=cuidgen) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=security_rating)](https://sonarcloud.io/summary/overall?id=cuidgen)
 
 [![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool)
 ![Nuget](https://img.shields.io/nuget/dt/cuidgen.tool)
 
-A command-line utility based on [cuid.net](https://github.com/xaevik/cuid.net/) for generating collision-resistant ids.
+A command-line utility based on [cuid.net](https://github.com/visus-io/cuid.net/) for generating collision-resistant ids.
 You can read more about CUIDs from the [official project website](https://github.com/paralleldrive/cuid2).
 
 ---
@@ -19,7 +19,7 @@ dotnet tool install --global cuidgen.tool
 ```
 
 If you prefer, cuidgen is also available as a portable binary for Windows, Mac and Linux for download from
-the [Releases](https://github.com/xaevik/cuidgen/releases) page.
+the [Releases](https://github.com/visus-io/cuidgen/releases) page.
 
 ### Example Usage
 

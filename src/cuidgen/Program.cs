@@ -1,9 +1,9 @@
-﻿#pragma warning disable XAELIB0001
+﻿#pragma warning disable VISLIB0001
 
 using McMaster.Extensions.CommandLineUtils;
-using Xaevik.Cuid;
-using Xaevik.Cuid.Generator;
-using Xaevik.Cuid.Generator.Resources;
+using Visus.Cuid.Generator;
+using Visus.Cuid.Generator.Resources;
+using Visus.Cuid;
 
 CommandLineApplication app = new();
 

@@ -30,6 +30,11 @@ app.OnExecute(() =>
 		case 2:
 			Console.WriteLine(new Cuid2(length.ParsedValue));
 			break;
+		default:
+#pragma warning disable CA2208
+			// ReSharper disable once LocalizableElement
+			throw new ArgumentException("Unknown generation type", nameof(generation.ParsedValue));
+#pragma warning restore CA2208
 	}
 });
 

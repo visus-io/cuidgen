@@ -1,9 +1,12 @@
 # cuidgen
 
-![GitHub](https://img.shields.io/github/license/visus-io/cuidgen?logo=github&style=flat) [![Continuous Integration](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml/badge.svg)](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=alert_status)](https://sonarcloud.io/summary/overall?id=cuidgen) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=cuidgen&metric=security_rating)](https://sonarcloud.io/summary/overall?id=cuidgen)
+
+[![Continuous Integration](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml/badge.svg)](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2312e89be42844938b9ef20bbc20490d)](https://app.codacy.com/gh/visus-io/cuidgen/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 [![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool)
 ![Nuget](https://img.shields.io/nuget/dt/cuidgen.tool)
+![GitHub](https://img.shields.io/github/license/visus-io/cuidgen?logo=github&style=flat)
 
 A command-line utility based on [cuid.net](https://github.com/visus-io/cuid.net/) for generating collision-resistant ids.
 You can read more about CUIDs from the [official project website](https://github.com/paralleldrive/cuid2).

@@ -1,12 +1,11 @@
 # cuidgen
 
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/visus-io/cuidgen/ci.yaml?style=for-the-badge&logo=github)](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml)
+[![Code Quality](https://img.shields.io/codacy/grade/2312e89be42844938b9ef20bbc20490d?style=for-the-badge&logo=codacy)](https://app.codacy.com/gh/visus-io/cuidgen/dashboard)
 
-[![Continuous Integration](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml/badge.svg)](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2312e89be42844938b9ef20bbc20490d)](https://app.codacy.com/gh/visus-io/cuidgen/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-
-[![Nuget](https://img.shields.io/nuget/vpre/cuidgen.tool)](https://www.nuget.org/packages/cuidgen.tool)
-![Nuget](https://img.shields.io/nuget/dt/cuidgen.tool)
-![GitHub](https://img.shields.io/github/license/visus-io/cuidgen?logo=github&style=flat)
+[![Nuget](https://img.shields.io/nuget/v/cuidgen.tool?style=for-the-badge&logo=nuget&label=stable)](https://www.nuget.org/packages/cuidgen.tool)
+![Downloads](https://img.shields.io/nuget/dt/cuidgen.tool?style=for-the-badge&logo=nuget)
+![GitHub](https://img.shields.io/github/license/visus-io/cuidgen?style=for-the-badge)
 
 A command-line utility based on [cuid.net](https://github.com/visus-io/cuid.net/) for generating collision-resistant ids.
 You can read more about CUIDs from the [official project website](https://github.com/paralleldrive/cuid2).

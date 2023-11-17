@@ -44,7 +44,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="cuid.net" Version="4.1.0" />
+      <PackageReference Include="cuid.net" Version="5.0.0" />
       <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.0" />
       <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.4">
         <PrivateAssets>all</PrivateAssets>

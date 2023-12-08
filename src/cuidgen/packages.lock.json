@@ -4,9 +4,9 @@
     "net8.0": {
       "cuid.net": {
         "type": "Direct",
-        "requested": "[5.0.1, )",
-        "resolved": "5.0.1",
-        "contentHash": "0J2GRmJ16CYsXyUVJaJSQjd3jCfH/N2FIVMnAKbRXIRTfpTq21wVDR1Q0eqD5VsPEwNzSj8fla2xcjSnX4FOhw==",
+        "requested": "[5.0.2, )",
+        "resolved": "5.0.2",
+        "contentHash": "lVbiuSRtZUI2XJ6yjnJAmuxbDUN+0wbXVoYU1GSnS5Q+BDrOZKJA6eercld4BD3BZoUy6YhLUEhVAP/2kKOgdg==",
         "dependencies": {
           "NSec.Cryptography": "22.4.0"
         }

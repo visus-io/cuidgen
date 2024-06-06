@@ -1,7 +1,7 @@
 # cuidgen
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/visus-io/cuidgen/ci.yaml?style=for-the-badge&logo=github)](https://github.com/visus-io/cuidgen/actions/workflows/ci.yaml)
-[![Code Quality](https://img.shields.io/codacy/grade/67fc36addb1a49258faf9a6a850f1ab4?style=for-the-badge&logo=codacy)](https://app.codacy.com/gh/visus-io/cuidgen/dashboard)
+[![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/visus%3Acuidgen?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge&logo=sonarcloud&logoColor=white)](https://sonarcloud.io/summary/overall?id=visus%3Acuidgen)
 
 [![Nuget](https://img.shields.io/nuget/v/cuidgen.tool?style=for-the-badge&logo=nuget&label=stable)](https://www.nuget.org/packages/cuidgen.tool)
 ![Downloads](https://img.shields.io/nuget/dt/cuidgen.tool?style=for-the-badge&logo=nuget)

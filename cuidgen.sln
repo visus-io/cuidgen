@@ -4,16 +4,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		Directory.Build.props = Directory.Build.props
-		GitVersion.yaml = GitVersion.yaml
 		LICENSE = LICENSE
 		README.md = README.md
-		renovate.json = renovate.json
 		global.json = global.json
+		GitVersion.yml = GitVersion.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cuidgen", "src\cuidgen\cuidgen.csproj", "{DF73FB7B-D9B2-41DA-8281-730435AD93CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{F936DD48-6BD5-4307-954D-B1D04BBE5B84}"
+	ProjectSection(SolutionItems) = preProject
+		.github\renovate.json = .github\renovate.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{CF3B7375-2623-4C88-9027-8C07A123E572}"
 	ProjectSection(SolutionItems) = preProject

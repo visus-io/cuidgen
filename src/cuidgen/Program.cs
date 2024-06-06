@@ -17,7 +17,6 @@ CommandOption<int> length = app.Option<int>("-l <length>", Resources.HelpOpt_L_D
 generation.DefaultValue = 2;
 length.DefaultValue = 24;
 
-app.HelpOption();
 app.VersionOption("-v", VersionHelper.GetVersion(true), VersionHelper.GetVersion(false));
 
 app.OnExecute(() =>
@@ -30,12 +29,15 @@ app.OnExecute(() =>
 		case 2:
 			Console.WriteLine(new Cuid2(length.ParsedValue));
 			break;
-		default:
-#pragma warning disable CA2208
-			// ReSharper disable once LocalizableElement
-			throw new ArgumentException("Unknown generation type", nameof(generation.ParsedValue));
-#pragma warning restore CA2208
 	}
 });
 
-return app.Execute(args);
+try
+{
+	return app.Execute(args);
+}
+catch ( Exception )
+{
+	app.ShowHelp();
+	return -1;
+}

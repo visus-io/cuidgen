@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RuntimeIdentifiers>linux-arm64;linux-musl-arm64;linux-musl-x64;linux-x64;osx-arm64;osx-x64;win-arm64;win-x64</RuntimeIdentifiers>
@@ -40,7 +40,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="cuid.net" Version="5.0.2"/>
+        <PackageReference Include="cuid.net" Version="6.0.0" />
         <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1"/>
         <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
             <PrivateAssets>all</PrivateAssets>

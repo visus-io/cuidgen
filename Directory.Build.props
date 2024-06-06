@@ -2,11 +2,6 @@
     <PropertyGroup>
         <Version>0.0.1</Version>
         <Copyright>Copyright (c) 2023 Visus Development Team</Copyright>
-        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(CI)' == 'true'">
-        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-        <RestoreLockedMode>true</RestoreLockedMode>
+        <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
     </PropertyGroup>
 </Project>

@@ -42,7 +42,7 @@
     <ItemGroup>
         <PackageReference Include="cuid.net" Version="6.0.0" />
         <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1"/>
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>

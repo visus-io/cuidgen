@@ -46,7 +46,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="8.0.100-1.23067.1">
+        <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.5">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">

@@ -42,11 +42,11 @@
     <ItemGroup>
         <PackageReference Include="cuid.net" Version="6.0.1" />
         <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1"/>
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.100">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="8.0.100-1.23067.1">
+        <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="10.0.0">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">

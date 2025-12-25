@@ -139,7 +139,7 @@ internal static class Program
             return false;
         }
 
-        if ( int.TryParse(args[++index], CultureInfo.InvariantCulture, out length) && length >= 4 && length <= 32 )
+        if ( int.TryParse(args[++index], CultureInfo.InvariantCulture, out length) && length is >= 4 and <= 32 )
         {
             return true;
         }

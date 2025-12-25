@@ -25,6 +25,29 @@ internal sealed class ProgramTests
     }
 
     [Test]
+    [Arguments("-g")]
+    [Arguments("--generation")]
+    public void Program_GenerationWithoutValue_ReturnsError(string generationFlag)
+    {
+        ( int exitCode, string _, string error ) = ExecuteProgram(generationFlag);
+
+        exitCode.Should().Be(-1);
+        error.Should().Contain("Usage:");
+    }
+
+    [Test]
+    [Arguments("--help")]
+    [Arguments("-h")]
+    [Arguments("-?")]
+    public void Program_Help_DisplaysHelpAndExitsSuccessfully(string helpFlag)
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram(helpFlag);
+
+        exitCode.Should().Be(0);
+        output.Should().Contain("Usage:");
+    }
+
+    [Test]
     public void Program_InvalidGeneration_ReturnsError()
     {
         ( int exitCode, string _, string _ ) = ExecuteProgram("-g", "3");
@@ -46,6 +69,17 @@ internal sealed class ProgramTests
         ( int exitCode, string _, string _ ) = ExecuteProgram("-l", "3");
 
         exitCode.Should().NotBe(0);
+    }
+
+    [Test]
+    [Arguments("-l")]
+    [Arguments("--length")]
+    public void Program_LengthWithoutValue_ReturnsError(string lengthFlag)
+    {
+        ( int exitCode, string _, string error ) = ExecuteProgram(lengthFlag);
+
+        exitCode.Should().Be(-1);
+        error.Should().Contain("Usage:");
     }
 
     [Test]
@@ -98,6 +132,17 @@ internal sealed class ProgramTests
 
         exitCode.Should().Be(-1);
         error.Should().Contain("Usage:");
+    }
+
+    [Test]
+    [Arguments("--version")]
+    [Arguments("-v")]
+    public void Program_Version_DisplaysVersionAndExitsSuccessfully(string versionFlag)
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram(versionFlag);
+
+        exitCode.Should().Be(0);
+        output.Should().NotBeEmpty();
     }
 
     private static (int ExitCode, string Output, string Error) ExecuteProgram(params string[] args)

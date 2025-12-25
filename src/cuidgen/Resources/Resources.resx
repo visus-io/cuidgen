@@ -18,10 +18,46 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="Error_GenerationInvalidValue" xml:space="preserve">
+        <value>Error: Invalid generation value. Allowed values are: 1, 2</value>
+    </data>
+    <data name="Error_GenerationRequiresValue" xml:space="preserve">
+        <value>Error: -g requires a value</value>
+    </data>
+    <data name="Error_LengthOutOfRange" xml:space="preserve">
+        <value>Error: Length must be between 4 and 32</value>
+    </data>
+    <data name="Error_LengthRequiresValue" xml:space="preserve">
+        <value>Error: -l requires a value</value>
+    </data>
+    <data name="Error_UnrecognizedOption" xml:space="preserve">
+        <value>Error: Unrecognized option '{0}'</value>
+    </data>
+    <data name="Help_OptionsHeader" xml:space="preserve">
+        <value>Options:</value>
+    </data>
+    <data name="Help_Usage" xml:space="preserve">
+        <value>Usage: {0} [options]</value>
+    </data>
+    <data name="HelpOpt_G_AllowedValues" xml:space="preserve">
+        <value>Allowed values are: 1, 2.</value>
+    </data>
+    <data name="HelpOpt_G_DefaultValue" xml:space="preserve">
+        <value>Default value is: 2.</value>
+    </data>
     <data name="HelpOpt_G_Descr" xml:space="preserve">
         <value>generation of cuid to generate</value>
     </data>
+    <data name="HelpOpt_H_Descr" xml:space="preserve">
+        <value>Show this help message</value>
+    </data>
+    <data name="HelpOpt_L_DefaultValue" xml:space="preserve">
+        <value>Default value is: 24.</value>
+    </data>
     <data name="HelpOpt_L_Descr" xml:space="preserve">
         <value>desired length of cuid (generation 2 only)</value>
+    </data>
+    <data name="HelpOpt_V_Descr" xml:space="preserve">
+        <value>Show version information</value>
     </data>
 </root>

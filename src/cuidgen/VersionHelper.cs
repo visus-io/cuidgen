@@ -1,21 +1,16 @@
 ﻿namespace Visus.Cuid.Generator;
 
-using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
-[ExcludeFromCodeCoverage]
 internal static class VersionHelper
 {
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static string GetVersion(bool simple)
-	{
-		Version? version = Assembly.GetExecutingAssembly().GetName().Version;
-		if ( version is null )
-		{
-			return string.Empty;
-		}
+    public static string GetVersion(bool simple)
+    {
+        Version version = Assembly.GetExecutingAssembly().GetName().Version ?? new Version(0, 0, 0);
 
-		return simple ? $"{version.Major}.{version.Minor}.{version.Build}" : version.ToString();
-	}
+        return simple
+                   ? string.Create(CultureInfo.InvariantCulture, $"{version.Major}.{version.Minor}.{version.Build}")
+                   : version.ToString();
+    }
 }

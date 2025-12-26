@@ -129,6 +129,7 @@ jobs:
       - name: Upload release artifact
         uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
         with:
+          tag: ${{ github.ref }}
           allowUpdates: true
           draft: true
           artifacts: cuidgen-${{ steps.version.outputs.version }}-${{ matrix.rid }}.7z

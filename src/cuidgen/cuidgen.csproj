@@ -70,7 +70,7 @@
     <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(SelfContained)' != 'true' OR '$(PublishSingleFile)' != 'true'">
     <Content Include="runtimeconfig.template.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

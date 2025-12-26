@@ -24,6 +24,12 @@ tab_width = 2
 indent_size = 2
 tab_width = 2
 
+#### YAML Files ####
+
+[*.{yml,yaml}]
+indent_size = 2
+tab_width = 2
+
 #### C# Files ####
 
 [*.cs]

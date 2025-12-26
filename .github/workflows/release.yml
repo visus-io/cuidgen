@@ -121,7 +121,7 @@ jobs:
 
       - name: Publish
         run: |
-          dotnet publish -c Release --self-contained -r ${{ matrix.rid }} \
+          dotnet publish -c Release --framework net10.0 --self-contained -r ${{ matrix.rid }} \
             -p:MinVerBuildMetadata=${{ github.run_number }} \
             -p:PublishDir=${{ runner.temp }}/artifacts/${{ matrix.rid }}
           7z a cuidgen-${{ steps.version.outputs.version }}-${{ matrix.rid }}.7z ${{ runner.temp }}/artifacts/${{ matrix.rid }}/*

@@ -8,7 +8,6 @@
     <PackageVersion Include="AwesomeAssertions.Analyzers" Version="9.0.8" />
     <PackageVersion Include="cuid.net" Version="7.0.0" />
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.264" />
-    <PackageVersion Include="Microsoft.NET.ILLink.Tasks" Version="10.0.1" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     <PackageVersion Include="MinVer" Version="6.0.0" />
     <PackageVersion Include="TUnit" Version="1.6.28" />

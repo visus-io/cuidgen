@@ -4,6 +4,8 @@ using AwesomeAssertions;
 
 internal sealed class ProgramTests
 {
+    private const string UsageText = "Usage:";
+
     [Test]
     public void Program_CustomLength_GeneratesCuid2WithSpecifiedLength()
     {
@@ -32,7 +34,7 @@ internal sealed class ProgramTests
         ( int exitCode, string _, string error ) = ExecuteProgram(generationFlag);
 
         exitCode.Should().Be(-1);
-        error.Should().Contain("Usage:");
+        error.Should().Contain(UsageText);
     }
 
     [Test]
@@ -44,7 +46,7 @@ internal sealed class ProgramTests
         ( int exitCode, string output, string _ ) = ExecuteProgram(helpFlag);
 
         exitCode.Should().Be(0);
-        output.Should().Contain("Usage:");
+        output.Should().Contain(UsageText);
     }
 
     [Test]
@@ -79,7 +81,7 @@ internal sealed class ProgramTests
         ( int exitCode, string _, string error ) = ExecuteProgram(lengthFlag);
 
         exitCode.Should().Be(-1);
-        error.Should().Contain("Usage:");
+        error.Should().Contain(UsageText);
     }
 
     [Test]
@@ -92,12 +94,33 @@ internal sealed class ProgramTests
     }
 
     [Test]
+    public void Program_MaximumNumber_Generates1000Cuids()
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram("-n", "1000");
+
+        exitCode.Should().Be(0);
+        string[] lines = output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        lines.Should().HaveCount(1000);
+    }
+
+    [Test]
     public void Program_MinimumLength_GeneratesCuid2WithLength4()
     {
         ( int exitCode, string output, string _ ) = ExecuteProgram("-l", "4");
 
         exitCode.Should().Be(0);
         output.Trim().Should().HaveLength(4);
+    }
+
+    [Test]
+    public void Program_MinimumNumber_GeneratesSingleCuid()
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram("-n", "1");
+
+        exitCode.Should().Be(0);
+        string[] lines = output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        lines.Should().ContainSingle();
+        lines[0].Should().HaveLength(24);
     }
 
     [Test]
@@ -126,12 +149,89 @@ internal sealed class ProgramTests
     }
 
     [Test]
+    [Arguments("-n", "5")]
+    [Arguments("--number", "5")]
+    public void Program_Number_GeneratesSpecifiedNumberOfCuids(string numberFlag, string count)
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram(numberFlag, count);
+
+        exitCode.Should().Be(0);
+        string[] lines = output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        lines.Should().HaveCount(5);
+
+        foreach ( string line in lines )
+        {
+            line.Should().HaveLength(24);
+        }
+    }
+
+    [Test]
+    public void Program_NumberTooLarge_ReturnsError()
+    {
+        ( int exitCode, string _, string error ) = ExecuteProgram("-n", "1001");
+
+        exitCode.Should().Be(-1);
+        error.Should().Contain("Number must be between 1 and 1000");
+    }
+
+    [Test]
+    public void Program_NumberTooSmall_ReturnsError()
+    {
+        ( int exitCode, string _, string error ) = ExecuteProgram("-n", "0");
+
+        exitCode.Should().Be(-1);
+        error.Should().Contain("Number must be between 1 and 1000");
+    }
+
+    [Test]
+    public void Program_NumberWithCustomLength_GeneratesMultipleCuidsWithSpecifiedLength()
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram("-l", "16", "-n", "4");
+
+        exitCode.Should().Be(0);
+        string[] lines = output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        lines.Should().HaveCount(4);
+
+        foreach ( string line in lines )
+        {
+            line.Should().HaveLength(16);
+        }
+    }
+
+    [Test]
+    public void Program_NumberWithGeneration1_GeneratesMultipleCuid1s()
+    {
+        ( int exitCode, string output, string _ ) = ExecuteProgram("-g", "1", "-n", "3");
+
+        exitCode.Should().Be(0);
+        string[] lines = output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        lines.Should().HaveCount(3);
+
+        foreach ( string line in lines )
+        {
+            line.Should().StartWith("c");
+            line.Should().HaveLength(25);
+        }
+    }
+
+    [Test]
+    [Arguments("-n")]
+    [Arguments("--number")]
+    public void Program_NumberWithoutValue_ReturnsError(string numberFlag)
+    {
+        ( int exitCode, string _, string error ) = ExecuteProgram(numberFlag);
+
+        exitCode.Should().Be(-1);
+        error.Should().Contain(UsageText);
+    }
+
+    [Test]
     public void Program_UnrecognizedOption_ReturnsErrorAndShowsHelp()
     {
         ( int exitCode, string _, string error ) = ExecuteProgram("--invalid-option");
 
         exitCode.Should().Be(-1);
-        error.Should().Contain("Usage:");
+        error.Should().Contain(UsageText);
     }
 
     [Test]

@@ -69,6 +69,18 @@ namespace Visus.Cuid.Generator.Resources {
             }
         }
         
+        internal static string Error_NumberOutOfRange {
+            get {
+                return ResourceManager.GetString("Error_NumberOutOfRange", resourceCulture);
+            }
+        }
+        
+        internal static string Error_NumberRequiresValue {
+            get {
+                return ResourceManager.GetString("Error_NumberRequiresValue", resourceCulture);
+            }
+        }
+        
         internal static string Error_UnrecognizedOption {
             get {
                 return ResourceManager.GetString("Error_UnrecognizedOption", resourceCulture);
@@ -120,6 +132,18 @@ namespace Visus.Cuid.Generator.Resources {
         internal static string HelpOpt_L_Descr {
             get {
                 return ResourceManager.GetString("HelpOpt_L_Descr", resourceCulture);
+            }
+        }
+        
+        internal static string HelpOpt_N_DefaultValue {
+            get {
+                return ResourceManager.GetString("HelpOpt_N_DefaultValue", resourceCulture);
+            }
+        }
+        
+        internal static string HelpOpt_N_Descr {
+            get {
+                return ResourceManager.GetString("HelpOpt_N_Descr", resourceCulture);
             }
         }
         

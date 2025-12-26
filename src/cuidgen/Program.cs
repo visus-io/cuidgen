@@ -12,7 +12,8 @@ internal static class Program
 {
     private static readonly string ApplicationName = AppDomain.CurrentDomain.FriendlyName;
 
-    private static readonly CompositeFormat ErrorUnrecognizedOptionFormat = CompositeFormat.Parse(Resources.Resources.Error_UnrecognizedOption);
+    private static readonly CompositeFormat ErrorUnrecognizedOptionFormat =
+        CompositeFormat.Parse(Resources.Resources.Error_UnrecognizedOption);
 
     private static readonly CompositeFormat HelpUsageFormat = CompositeFormat.Parse(Resources.Resources.Help_Usage);
 
@@ -20,52 +21,27 @@ internal static class Program
     {
         short generation = 2;
         int length = 24;
+        int number = 1;
 
         try
         {
             for ( int i = 0; i < args.Length; i++ )
             {
-                string arg = args[i];
+                int? result = ProcessArgument(args,
+                    ref i,
+                    ref generation,
+                    ref length,
+                    ref number,
+                    outputWriter,
+                    errorWriter);
 
-                switch ( arg )
+                if ( result.HasValue )
                 {
-                    case "-v":
-                    case "--version":
-                        outputWriter.WriteLine(VersionHelper.GetVersion(true));
-                        return 0;
-
-                    case "-h":
-                    case "--help":
-                    case "-?":
-                        ShowHelp(outputWriter);
-                        return 0;
-
-                    case "-g":
-                    case "--generation":
-                        if ( !TryParseGeneration(args, ref i, ref generation, errorWriter) )
-                        {
-                            return -1;
-                        }
-
-                        break;
-
-                    case "-l":
-                    case "--length":
-                        if ( !TryParseLength(args, ref i, ref length, errorWriter) )
-                        {
-                            return -1;
-                        }
-
-                        break;
-
-                    default:
-                        errorWriter.WriteLine(string.Format(CultureInfo.CurrentCulture, ErrorUnrecognizedOptionFormat, arg));
-                        ShowHelp(errorWriter);
-                        return -1;
+                    return result.Value;
                 }
             }
 
-            GenerateCuid(generation, length, outputWriter);
+            GenerateCuid(generation, length, number, outputWriter);
             return 0;
         }
         catch ( Exception )
@@ -76,16 +52,19 @@ internal static class Program
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static void GenerateCuid(short generation, int length, TextWriter outputWriter)
+    private static void GenerateCuid(short generation, int length, int number, TextWriter outputWriter)
     {
-        switch ( generation )
+        for ( int i = 0; i < number; i++ )
         {
-            case 1:
-                outputWriter.WriteLine(Cuid.NewCuid());
-                break;
-            case 2:
-                outputWriter.WriteLine(new Cuid2(length));
-                break;
+            switch ( generation )
+            {
+                case 1:
+                    outputWriter.WriteLine(Cuid.NewCuid());
+                    break;
+                case 2:
+                    outputWriter.WriteLine(new Cuid2(length));
+                    break;
+            }
         }
     }
 
@@ -93,6 +72,49 @@ internal static class Program
     private static int Main(string[] args)
     {
         return Execute(args, Console.Out, Console.Error);
+    }
+
+    private static int? ProcessArgument(string[] args,
+                                        ref int index,
+                                        ref short generation,
+                                        ref int length,
+                                        ref int number,
+                                        TextWriter outputWriter,
+                                        TextWriter errorWriter
+    )
+    {
+        string arg = args[index];
+
+        switch ( arg )
+        {
+            case "-v":
+            case "--version":
+                outputWriter.WriteLine(VersionHelper.GetVersion(true));
+                return 0;
+
+            case "-h":
+            case "--help":
+            case "-?":
+                ShowHelp(outputWriter);
+                return 0;
+
+            case "-g":
+            case "--generation":
+                return TryParseGeneration(args, ref index, ref generation, errorWriter) ? null : -1;
+
+            case "-l":
+            case "--length":
+                return TryParseLength(args, ref index, ref length, errorWriter) ? null : -1;
+
+            case "-n":
+            case "--number":
+                return TryParseNumber(args, ref index, ref number, errorWriter) ? null : -1;
+
+            default:
+                errorWriter.WriteLine(string.Format(CultureInfo.CurrentCulture, ErrorUnrecognizedOptionFormat, arg));
+                ShowHelp(errorWriter);
+                return -1;
+        }
     }
 
     private static void ShowHelp(TextWriter writer)
@@ -107,6 +129,8 @@ internal static class Program
         writer.WriteLine($"                                 {Resources.Resources.HelpOpt_G_DefaultValue}");
         writer.WriteLine($"  -l, --length <length>          {Resources.Resources.HelpOpt_L_Descr}");
         writer.WriteLine($"                                 {Resources.Resources.HelpOpt_L_DefaultValue}");
+        writer.WriteLine($"  -n, --number <number>          {Resources.Resources.HelpOpt_N_Descr}");
+        writer.WriteLine($"                                 {Resources.Resources.HelpOpt_N_DefaultValue}");
         writer.WriteLine($"  -v, --version                  {Resources.Resources.HelpOpt_V_Descr}");
         writer.WriteLine($"  -h, --help                     {Resources.Resources.HelpOpt_H_Descr}");
     }
@@ -145,6 +169,25 @@ internal static class Program
         }
 
         errorWriter.WriteLine(Resources.Resources.Error_LengthOutOfRange);
+        ShowHelp(errorWriter);
+        return false;
+    }
+
+    private static bool TryParseNumber(string[] args, ref int index, ref int number, TextWriter errorWriter)
+    {
+        if ( index + 1 >= args.Length )
+        {
+            errorWriter.WriteLine(Resources.Resources.Error_NumberRequiresValue);
+            ShowHelp(errorWriter);
+            return false;
+        }
+
+        if ( int.TryParse(args[++index], CultureInfo.InvariantCulture, out number) && number is >= 1 and <= 1000 )
+        {
+            return true;
+        }
+
+        errorWriter.WriteLine(Resources.Resources.Error_NumberOutOfRange);
         ShowHelp(errorWriter);
         return false;
     }

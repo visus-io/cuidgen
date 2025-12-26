@@ -30,6 +30,12 @@
     <data name="Error_LengthRequiresValue" xml:space="preserve">
         <value>Error: -l requires a value</value>
     </data>
+    <data name="Error_NumberOutOfRange" xml:space="preserve">
+        <value>Error: Number must be between 1 and 1000</value>
+    </data>
+    <data name="Error_NumberRequiresValue" xml:space="preserve">
+        <value>Error: -n requires a value</value>
+    </data>
     <data name="Error_UnrecognizedOption" xml:space="preserve">
         <value>Error: Unrecognized option '{0}'</value>
     </data>
@@ -56,6 +62,12 @@
     </data>
     <data name="HelpOpt_L_Descr" xml:space="preserve">
         <value>desired length of cuid (generation 2 only)</value>
+    </data>
+    <data name="HelpOpt_N_DefaultValue" xml:space="preserve">
+        <value>Default value is: 1.</value>
+    </data>
+    <data name="HelpOpt_N_Descr" xml:space="preserve">
+        <value>number of cuids to generate (max 1000)</value>
     </data>
     <data name="HelpOpt_V_Descr" xml:space="preserve">
         <value>Show version information</value>

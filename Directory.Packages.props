@@ -10,7 +10,7 @@
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.298" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     <PackageVersion Include="MinVer" Version="6.1.0" />
-    <PackageVersion Include="TUnit" Version="1.12.147" />
+    <PackageVersion Include="TUnit" Version="1.13.11" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Meziantou.Analyzer">

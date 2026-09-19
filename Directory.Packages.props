@@ -6,11 +6,11 @@
   <ItemGroup>
     <PackageVersion Include="AwesomeAssertions" Version="9.4.0" />
     <PackageVersion Include="AwesomeAssertions.Analyzers" Version="9.0.8" />
-    <PackageVersion Include="cuid.net" Version="7.0.0" />
-    <PackageVersion Include="Meziantou.Analyzer" Version="3.0.91" />
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.300" />
-    <PackageVersion Include="MinVer" Version="6.1.0" />
-    <PackageVersion Include="TUnit" Version="1.45.29" />
+    <PackageVersion Include="cuid.net" Version="7.1.0" />
+    <PackageVersion Include="Meziantou.Analyzer" Version="3.0.262" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.401" />
+    <PackageVersion Include="MinVer" Version="8.0.0" />
+    <PackageVersion Include="TUnit" Version="1.68.17" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Meziantou.Analyzer">
